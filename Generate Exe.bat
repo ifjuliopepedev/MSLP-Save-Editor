@@ -10,11 +10,11 @@ rd /s /q dist 2>nul
 del /f /q "*.spec" 2>nul
 
 echo [3/5] Gerando executavel com PyInstaller...
-python -m PyInstaller --noconfirm --onefile --windowed ^
+python -m PyInstaller --noconfirm --onedir --windowed ^
 --name "MSLPEditor" ^
 --icon="Icon.ico" ^
 --add-data "Icon.ico;." ^
---collect-all customtkinter ^
+--hidden-import customtkinter ^
 --version-file version.txt ^
 "MSLP Editor.pyw"
 
